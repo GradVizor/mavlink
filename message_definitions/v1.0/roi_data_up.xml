@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<mavlink>
+  <include>standard.xml</include>
+  <version>3</version>
+  <messages>
+    <message id="43210" name="ROI_DATA_UP">
+      <description>Selected ROI info from ground station to air unit.</description>
+      <field type="uint64_t" name="timestamp">time since system start (microseconds)</field>
+      <field type="uint32_t" name="frame_id">Frame number from video stream</field>
+      <field type="float" name="x1">X-Coordinate of first point clicked</field>
+      <field type="float" name="y1">Y-Coordinate of first point clicked</field>
+      <field type="float" name="x2">X-Coordinate of last point clicked</field>
+      <field type="float" name="y2">Y-Coordinate of last point clicked</field>
+      <field type="uint8_t" name="state" enum="MAV_BOOL" default="0">Tracking state for uplink</field>
+    </message>
+  </messages>
+</mavlink>
