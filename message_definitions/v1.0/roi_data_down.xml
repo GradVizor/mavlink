@@ -9,8 +9,8 @@
       <field type="uint32_t" name="frame_id">Frame number from video stream</field>
       <field type="float" name="x1">X-Coordinate of first point clicked</field>
       <field type="float" name="y1">Y-Coordinate of first point clicked</field>
-      <field type="float" name="x2">X-Coordinate of last point clicked</field>
-      <field type="float" name="y2">Y-Coordinate of last point clicked</field>
+      <field type="float" name="w">Width to the last point clicked</field>
+      <field type="float" name="h">Height to the last point clicked</field>
       <field type="uint8_t" name="state" enum="MAV_BOOL" default="0">Tracking state for downlink</field>
     </message>
   </messages>
