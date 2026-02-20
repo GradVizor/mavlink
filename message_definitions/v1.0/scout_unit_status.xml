@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<mavlink>
+  <version>3</version>
+
+  <enums>
+    <!-- Armor Status Enum -->
+    <enum name="SCOUT_ARMOR_STATE">
+      <entry value="0" name="SCOUT_ARMOR_STATE_NONE">
+        <description>No armor headset detected</description>
+      </entry>
+      <entry value="1" name="SCOUT_ARMOR_STATE_CONNECTED">
+        <description>Connected but uncalibrated</description>
+      </entry>
+      <entry value="2" name="SCOUT_ARMOR_STATE_CALIBRATING">
+        <description>Calibration in progress</description>
+      </entry>
+      <entry value="3" name="SCOUT_ARMOR_STATE_READY">
+        <description>Calibrated and tracking active</description>
+      </entry>
+    </enum>
+
+    <!-- GPS Status Enum -->
+    <enum name="SCOUT_GPS_STATE">
+      <entry value="0" name="SCOUT_GPS_STATE_NONE">
+        <description>No GPS hardware detected</description>
+      </entry>
+      <entry value="1" name="SCOUT_GPS_STATE_ACQUIRING">
+        <description>GPS connected but no fix</description>
+      </entry>
+      <entry value="2" name="SCOUT_GPS_STATE_LOCKED">
+        <description>GPS fixed and valid</description>
+      </entry>
+    </enum>
+
+    <!-- Drone Status Enum -->
+    <enum name="SCOUT_DRONE_STATE">
+      <entry value="0" name="SCOUT_DRONE_STATE_DISCONNECTED">
+        <description>No telemetry from drone</description>
+      </entry>
+      <entry value="1" name="SCOUT_DRONE_STATE_CONNECTED">
+        <description>Drone connected and disarmed</description>
+      </entry>
+      <entry value="2" name="SCOUT_DRONE_STATE_ARMED">
+        <description>Drone armed and ready</description>
+      </entry>
+    </enum>
+
+    <!-- Button Bitmask (Standardizes multiple buttons into 1 byte) -->
+    <enum name="SCOUT_BUTTON_STATE" bitmask="true">
+      <entry value="1" name="SCOUT_BUTTON_STATE_MODE_BIT">
+        <description>Flight Mode button is pressed</description>
+      </entry>
+      <entry value="2" name="SCOUT_BUTTON_STATE_TAKEOFF_RTL_BIT">
+        <description>Takeoff/RTL button is pressed</description>
+      </entry>
+      <entry value="4" name="SCOUT_BUTTON_STATE_TOGGLE_BIT">
+        <description>Scout toggle button is pressed</description>
+      </entry>
+      <entry value="8" name="SCOUT_BUTTON_STATE_RESCAN_BIT">
+        <description>Rescan button is pressed</description>
+      </entry>
+    </enum>
+  </enums>
+
+  <messages>
+    <message id="43212" name="SCOUT_UNIT_STATUS">
+      <description>Scout unit status information</description>
+      <field type="uint64_t" name="timestamp">time since system start (microseconds)</field>
+      <field type="uint8_t" name="armor_status" enum="SCOUT_ARMOR_STATE">Armor status of the scout unit</field>
+      <field type="uint8_t" name="gps_status" enum="SCOUT_GPS_STATE">GPS status of the scout unit</field>
+      <field type="uint8_t" name="drone_status" enum="SCOUT_DRONE_STATE">Drone status</field>
+      <field type="uint8_t" name="buttons" enum="SCOUT_BUTTON_STATE">Bitmask of all buttons</field>
+      <field type="uint8_t" name="custom_field">Custom field for future use</field>
+    </message>
+  </messages>
+</mavlink>
