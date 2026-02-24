@@ -15,6 +15,7 @@ extern "C" {
 static void mavlink_test_standard(uint8_t, uint8_t, mavlink_message_t *last_msg);
 static void mavlink_test_roi_data_down(uint8_t, uint8_t, mavlink_message_t *last_msg);
 static void mavlink_test_roi_data_up(uint8_t, uint8_t, mavlink_message_t *last_msg);
+static void mavlink_test_scout_unit_status(uint8_t, uint8_t, mavlink_message_t *last_msg);
 static void mavlink_test_common(uint8_t, uint8_t, mavlink_message_t *last_msg);
 
 static void mavlink_test_all(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
@@ -22,6 +23,7 @@ static void mavlink_test_all(uint8_t system_id, uint8_t component_id, mavlink_me
     mavlink_test_standard(system_id, component_id, last_msg);
     mavlink_test_roi_data_down(system_id, component_id, last_msg);
     mavlink_test_roi_data_up(system_id, component_id, last_msg);
+    mavlink_test_scout_unit_status(system_id, component_id, last_msg);
     mavlink_test_common(system_id, component_id, last_msg);
 }
 #endif
@@ -29,6 +31,7 @@ static void mavlink_test_all(uint8_t system_id, uint8_t component_id, mavlink_me
 #include "../standard/testsuite.h"
 #include "../roi_data_down/testsuite.h"
 #include "../roi_data_up/testsuite.h"
+#include "../scout_unit_status/testsuite.h"
 
 
 static void mavlink_test_sys_status(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)

@@ -1,12 +1,12 @@
 /** @file
- *  @brief MAVLink comm protocol built from icarous.xml
+ *  @brief MAVLink comm protocol built from scout_unit_status.xml
  *  @see http://mavlink.org
  */
 #pragma once
 #ifndef MAVLINK_H
 #define MAVLINK_H
 
-#define MAVLINK_PRIMARY_XML_HASH 8115214547430168721
+#define MAVLINK_PRIMARY_XML_HASH 1700163458839684427
 
 #ifndef MAVLINK_STX
 #define MAVLINK_STX 253
@@ -29,6 +29,6 @@
 #endif
 
 #include "version.h"
-#include "icarous.h"
+#include "scout_unit_status.h"
 
 #endif // MAVLINK_H
