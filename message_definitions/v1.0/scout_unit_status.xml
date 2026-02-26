@@ -46,6 +46,8 @@
     </enum>
 
     <!-- Button Bitmask (Standardizes multiple buttons into 1 byte) -->
+    <!-- But we can only use 8 buttons at max for which 4 enums are already declared. 
+         To have more buttons change the data type to a higher number according to the usage -->
     <enum name="SCOUT_BUTTON_STATE" bitmask="true">
       <entry value="1" name="SCOUT_BUTTON_STATE_MODE_BIT">
         <description>Flight Mode button is pressed</description>
